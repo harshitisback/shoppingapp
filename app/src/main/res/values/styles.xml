@@ -48,4 +48,17 @@
             4
         </item>
     </style>
+
+
+    <style name="acc">
+
+        <item name="android:textSize">
+            30sp
+        </item>
+
+        <item name="android:textColor">
+            #020101
+        </item>
+
+    </style>
 </resources>

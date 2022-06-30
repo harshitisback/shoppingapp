@@ -3,6 +3,7 @@ package com.example.shoppingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText name, email, pass, confpass;
     RelativeLayout signupButton;
     ProgressBar pb;
+    TextView already;
 
 
     @Override
@@ -38,7 +40,18 @@ public class MainActivity extends AppCompatActivity {
         confpass = (EditText) findViewById(R.id.editTextTextPassword3);
         signupButton = (RelativeLayout) findViewById(R.id.signUpButton);
         pb = (ProgressBar)findViewById(R.id.pgbar);
+        already = (TextView)findViewById(R.id.already);
 
+
+        // already text clickListner
+
+already.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+        startActivity(intent);
+    }
+});
 
 
 // button setonclicklistner
@@ -80,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     pass.requestFocus();
                     return;
                 }
-                if(Confpass != Pass){
+                if(!Confpass.equals(Pass)){
                     confpass.setError("Your Password should be same");
                     confpass.requestFocus();
                     return;
@@ -100,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
                                         pb.setVisibility(view.VISIBLE);
                                         // redirect to login page
+                                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                                        startActivity(intent);
+                                        pb.setVisibility(view.GONE);
+
 
 
                                     }else{
