@@ -55,7 +55,7 @@
         android:id="@+id/already_hav"
         android:layout_width="168dp"
         android:layout_height="143dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:gravity="top"
         android:text="Already
@@ -73,7 +73,7 @@ Account?"
         android:id="@+id/new_user_re"
         android:layout_width="239dp"
         android:layout_height="36dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="72dp"
         android:gravity="center"
@@ -113,7 +113,7 @@ Account?"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
-        android:id="@+id/pgbar"
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
