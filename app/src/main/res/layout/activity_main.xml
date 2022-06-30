@@ -60,7 +60,7 @@ us!"
             android:minHeight="48dp" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:id="@+id/signUpButton"
             android:layout_width="212dp"
             android:layout_height="57dp"
@@ -89,10 +89,10 @@ us!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/already_hav"
+            android:id="@+id/already"
             android:layout_width="336dp"
             android:layout_height="42dp"
             android:layout_alignStart="@+id/rectangle_1"
@@ -161,7 +161,7 @@ us!"
             android:layout_marginBottom="360dp"
             android:backgroundTint="#11CFC5"
             android:ems="10"
-            android:hint="Email id"
+            android:hint="Email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textColorHint="#00838F" />
@@ -181,6 +181,17 @@ us!"
             android:hint="Password"
             android:inputType="textPassword"
             android:minHeight="48dp" />
+
+
+        <ProgressBar
+            android:id="@+id/pgbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:layout_marginEnd="179dp"
+            android:layout_marginBottom="209dp" />
 
     </RelativeLayout>
 

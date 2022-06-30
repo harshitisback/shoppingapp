@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -54,7 +55,9 @@ us!"
             android:layout_marginBottom="209dp"
             android:backgroundTint="#11CFC5"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
 
 
         <RelativeLayout
@@ -63,12 +66,10 @@ us!"
             android:layout_height="57dp"
             android:layout_alignStart="@+id/rectangle_1"
             android:layout_alignEnd="@+id/rectangle_1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="92dp"
-            android:layout_marginTop="575dp"
-            android:layout_marginEnd="72dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="73dp"
+            android:layout_marginEnd="59dp"
+            android:layout_marginBottom="120dp"
             android:background="@drawable/signupbutton"
             android:elevation="4dp"
             android:gravity="center">
@@ -80,28 +81,30 @@ us!"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="45dp"
-                android:layout_marginLeft="131dp"
-                android:layout_marginEnd="46dp"
-                android:layout_marginBottom="0dp"
                 android:gravity="center"
                 android:text="REGISTER"
-                android:textAppearance="@style/register" />
+                android:textAppearance="@style/register"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/already_hav"
+            android:id="@+id/already"
             android:layout_width="336dp"
             android:layout_height="42dp"
             android:layout_alignStart="@+id/rectangle_1"
             android:layout_alignEnd="@+id/rectangle_1"
             android:layout_alignBottom="@+id/rectangle_1"
             android:layout_marginStart="10dp"
-            android:gravity="center"
             android:layout_marginEnd="-2dp"
             android:layout_marginBottom="9dp"
+            android:gravity="center"
             android:text="Already have an account?"
-            android:textAppearance="@style/already_hav" />
+            android:textAppearance="@style/already_hav"
+            android:textColor="#009688" />
 
         <ImageView
             android:layout_width="207dp"
@@ -114,7 +117,8 @@ us!"
             android:layout_marginTop="-68dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="493dp"
-            android:src="@drawable/image_2" />
+            android:src="@drawable/image_2"
+            tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -125,7 +129,8 @@ us!"
             android:layout_marginStart="249dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
-            android:src="@drawable/image_3" />
+            android:src="@drawable/image_3"
+            tools:ignore="ImageContrastCheck" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -139,8 +144,10 @@ us!"
             android:layout_marginBottom="446dp"
             android:backgroundTint="#11CFC5"
             android:ems="10"
+            android:hint="Name"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:minHeight="48dp"
+            android:textColorHint="#00838F" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
@@ -154,7 +161,10 @@ us!"
             android:layout_marginBottom="360dp"
             android:backgroundTint="#11CFC5"
             android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textColorHint="#00838F" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -168,7 +178,21 @@ us!"
             android:layout_marginBottom="281dp"
             android:backgroundTint="#11CFC5"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
+
+        <ProgressBar
+            android:id="@+id/pgbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginEnd="179dp"
+            android:layout_marginBottom="209dp"
+            android:visibility="gone"/>
+
 
     </RelativeLayout>
 
