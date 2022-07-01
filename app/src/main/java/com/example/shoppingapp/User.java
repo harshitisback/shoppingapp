@@ -1,8 +1,9 @@
 package com.example.shoppingapp;
 
 public class User {
-    public  String fullname, email;
-    public User(){
+    public String fullname, email;
+
+    public User() {
 
     }
 

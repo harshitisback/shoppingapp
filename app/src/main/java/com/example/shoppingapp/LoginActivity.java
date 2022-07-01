@@ -22,12 +22,13 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
 
-    EditText emaillogin,passlogin;
+    EditText emaillogin, passlogin;
     TextView goback;
     //View buttonlogin;
     RelativeLayout loginbutton;
     FirebaseAuth auth;
     ProgressBar pb;
+    TextView reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,12 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_actiivity);
         auth = FirebaseAuth.getInstance();
         goback = (TextView) findViewById(R.id.new_user_re);
-        emaillogin = (EditText)findViewById(R.id.LoginEmail);
-        passlogin = (EditText)findViewById(R.id.LoginPass);
+        emaillogin = (EditText) findViewById(R.id.LoginEmail);
+        passlogin = (EditText) findViewById(R.id.LoginPass);
         //buttonlogin = (View)findViewById(R.id.LoginButton);
-        pb = (ProgressBar)findViewById(R.id.progressBar);
-        loginbutton = (RelativeLayout)findViewById(R.id.LoginButton);
-
+        pb = (ProgressBar) findViewById(R.id.progressBar);
+        loginbutton = (RelativeLayout) findViewById(R.id.LoginButton);
+        reset = (TextView) findViewById(R.id.forgot);
 
 
         loginbutton.setOnClickListener(new View.OnClickListener() {
@@ -51,52 +52,62 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ResetPass.class));
+            }
+        });
+
 
         goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
     }
 
+
     private void userlogin() {
         String email = emaillogin.getText().toString().trim();
         String Pass = passlogin.getText().toString().trim();
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             emaillogin.setError("Email is required");
             emaillogin.requestFocus();
             return;
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emaillogin.setError("Please enter a valid emial");
             emaillogin.requestFocus();
             return;
         }
-        if(Pass.isEmpty()){
+        if (Pass.isEmpty()) {
             passlogin.setError("password is required");
             passlogin.requestFocus();
             return;
         }
-        if (Pass.length()<6){
+        if (Pass.length() < 6) {
             passlogin.setError("Min password length should be 6 characters!");
             passlogin.requestFocus();
             return;
         }
         pb.setVisibility(View.VISIBLE);
 
-        auth.signInWithEmailAndPassword(email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email, Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     // redirect to user profile
-                    startActivity(new Intent(LoginActivity.this,UserProfile.class));
-                    Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LoginActivity.this, UserProfile.class));
+                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                    pb.setVisibility(View.GONE);
 
 
-                }else{
-                    Toast.makeText(LoginActivity.this,"Failed to login Please check your credentials",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Failed to login Please check your credentials", Toast.LENGTH_LONG).show();
+                    pb.setVisibility(View.GONE);
                 }
             }
         });

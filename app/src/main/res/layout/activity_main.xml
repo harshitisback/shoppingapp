@@ -11,8 +11,8 @@
         android:id="@+id/page_1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:clipToOutline="true"
-        android:background="@drawable/mainpage">
+        android:background="@drawable/mainpage"
+        android:clipToOutline="true">
 
         <TextView
             android:id="@+id/here_s_your"
@@ -189,16 +189,11 @@ us!"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:visibility="gone"
             android:layout_marginEnd="179dp"
-            android:layout_marginBottom="209dp" />
+            android:layout_marginBottom="209dp"
+            android:visibility="gone" />
 
     </RelativeLayout>
-
-
-
-
-
 
 
 </LinearLayout>

@@ -39,19 +39,19 @@ public class MainActivity extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.editTextTextPassword);
         confpass = (EditText) findViewById(R.id.editTextTextPassword3);
         signupButton = (RelativeLayout) findViewById(R.id.signUpButton);
-        pb = (ProgressBar)findViewById(R.id.pgbar);
-        already = (TextView)findViewById(R.id.already);
+        pb = (ProgressBar) findViewById(R.id.pgbar);
+        already = (TextView) findViewById(R.id.already);
 
 
         // already text clickListner
 
-already.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-        startActivity(intent);
-    }
-});
+        already.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 // button setonclicklistner
@@ -63,79 +63,75 @@ already.setOnClickListener(new View.OnClickListener() {
                 String Name = name.getText().toString().trim();
                 String Confpass = confpass.getText().toString().trim();
 
-                if (Name.isEmpty()){
+                if (Name.isEmpty()) {
                     name.setError("Your name is required");
                     name.requestFocus();
                     return;
                 }
-                if (Email.isEmpty()){
+                if (Email.isEmpty()) {
                     email.setError("Your Email is required");
                     email.requestFocus();
                     return;
                 }
-                if (Pass.isEmpty()){
+                if (Pass.isEmpty()) {
                     pass.setError("Your Pass is required");
                     pass.requestFocus();
                     return;
                 }
-                if (Confpass.isEmpty()){
+                if (Confpass.isEmpty()) {
                     confpass.setError("Confirm Your Password ");
                     confpass.requestFocus();
                     return;
                 }
-                if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches()){
+                if (!Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
                     email.setError("Please Provide Valid email");
                     email.requestFocus();
                     return;
                 }
-                if (Pass.length()<6){
+                if (Pass.length() < 6) {
                     pass.setError("Min Password length should be 6 char");
                     pass.requestFocus();
                     return;
                 }
-                if(!Confpass.equals(Pass)){
+                if (!Confpass.equals(Pass)) {
                     confpass.setError("Your Password should be same");
                     confpass.requestFocus();
                     return;
                 }
 
                 pb.setVisibility(view.VISIBLE);
-                auth.createUserWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.createUserWithEmailAndPassword(Email, Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             User user = new User(Name, Email);
 
                             FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(MainActivity.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(MainActivity.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
                                         pb.setVisibility(view.VISIBLE);
                                         // redirect to login page
-                                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                         startActivity(intent);
                                         pb.setVisibility(view.GONE);
 
 
-
-                                    }else{
-                                        Toast.makeText(MainActivity.this,"Failed to register try again!",Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Toast.makeText(MainActivity.this, "Failed to register try again!", Toast.LENGTH_LONG).show();
                                         pb.setVisibility(view.GONE);
                                     }
                                 }
                             });
-                        }else{
-                            Toast.makeText(MainActivity.this,"Failed to register try again!",Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Failed to register try again!", Toast.LENGTH_LONG).show();
                             pb.setVisibility(view.GONE);
                         }
                     }
                 });
             }
         });
-
-
-
 
 
     }

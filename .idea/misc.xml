@@ -3,17 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/_bg__home_ek2_shape.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/custom_edittext.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/custominput.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.172" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_cart.xml" value="0.172" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1885" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_lock_24.xml" value="0.2055" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_logout_box_fill.xml" value="0.172" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_menu_unfold_line.xml" value="0.172" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/ic_shopping_cart_2_fill.xml" value="0.172" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/image_2.xml" value="0.1735" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/loginbutton.xml" value="0.2055" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/rectanle1.xml" value="0.1735" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/reset.xml" value="0.1905" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/signupbutton.xml" value="0.1735" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/drawable/user_interf.xml" value="0.2055" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout-v28/activity_reset_pass.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout-v31/activity_main.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.193359375" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.171875" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/activity_login.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/activity_main.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/activity_reset_pass.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/activity_user_profile.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/app_barmain.xml" value="0.228125" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/header.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/layout/login_actiivity.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/amank/AndroidStudioProjects/AdditionApplication/ShoppingApp/app/src/main/res/menu/sidemenu.xml" value="0.228125" />
       </map>
     </option>
   </component>
