@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.shoppingapp.Ui.Profileui;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,6 +28,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class Dashboard extends AppCompatActivity {
@@ -33,14 +38,12 @@ public class Dashboard extends AppCompatActivity {
    DrawerLayout drawerLayout;
    NavigationView navigationView;
    Toolbar toolbar;
-   TextView showname, showemail;
 
-   FirebaseAuth mAuth;
-   FirebaseUser user;
-//   FirebaseDatabase database;
-   DatabaseReference reference;
 
-   String userID;
+    FirebaseStorage storage;
+    FirebaseAuth auth;
+    FirebaseDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,40 +53,39 @@ public class Dashboard extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         navigationView = (NavigationView) findViewById(R.id.navigationview);
         toolbar = findViewById(R.id.tb);
+        auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        storage = FirebaseStorage.getInstance();
 
-        showname = (TextView)findViewById(R.id.showname);
-        showemail = (TextView)findViewById(R.id.showemail);
+
 
         View headerview = navigationView.getHeaderView(0);
+        TextView name = headerview.findViewById(R.id.nav_header_name);
+        TextView email = headerview.findViewById(R.id.nav_header_email);
+        CircleImageView navImage = headerview.findViewById(R.id.nav_header_img);
+
+        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User userModel = snapshot.getValue(User.class);
+                        name.setText(userModel.getFullname());
+                        email.setText(userModel.getEmail());
+
+                        Glide.with(Dashboard.this).load(userModel.getProfileImg()).into(navImage);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
 
 
 
-//        Fetching the data of email and name to show
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
-
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userprofile = snapshot.getValue(User.class);
-
-                if (userprofile != null){
-                    String fullname = userprofile.fullname;
-                    String email = userprofile.email;
-
-                    showname.setText(fullname);
-                    showemail.setText(email);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Dashboard.this,"Something wrong happend",Toast.LENGTH_LONG).show();
-            }
-        });
 
 //        updateNavHeader();
 
@@ -109,7 +111,9 @@ public class Dashboard extends AppCompatActivity {
                     loadfragment(new HomeFragment());
 
                 } else  if(id == R.id.optinfo){
-                    startActivity(new Intent(Dashboard.this,UserInfoActivity.class));
+//                    startActivity(new Intent(Dashboard.this,UserInfoActivity.class));
+                    loadfragment(new Profileui());
+
 
                 }else  if(id == R.id.optcart){
 
@@ -147,19 +151,5 @@ public class Dashboard extends AppCompatActivity {
         ft.commit();
     }
 
-//    public  void updateNavHeader() {
-//        navigationView = (NavigationView) findViewById(R.id.navigationview);
-//        View headerview = navigationView.getHeaderView(0);
-//        showname = (TextView)findViewById(R.id.showname);
-//        showemail = (TextView)findViewById(R.id.showemail);
-//
-//        showemail.setText(user.getEmail());
-//        showname.setText(user.getDisplayName());
-//
-//        // now we will use Glide to load user image
-//
-//    }
-
-//    loading first home as display
 
 }
