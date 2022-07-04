@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     // redirect to user profile
-                    startActivity(new Intent(LoginActivity.this, UserProfile.class));
+                    startActivity(new Intent(LoginActivity.this, Dashboard.class));
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                     pb.setVisibility(View.GONE);
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:padding="15dp"
+    android:background="#129D90">
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="122dp"
+        android:contentDescription="Header Image"
+        android:paddingTop="25dp"
+        android:src="@drawable/ic_baseline_account_circle_24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:text="Harshit Tiwari"
+        android:id="@+id/showname"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="amankumartiwari1502@gmail.com"
+        android:id="@+id/showemail"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="16dp"/>
+
+
+
+</LinearLayout>

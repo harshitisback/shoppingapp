@@ -25,4 +25,11 @@ Here\u00E2\u0080\u0099s \nYour first\nstep with \nus!
 
     <string name="navigation_open">Open Navigation</string>
     <string name="navigation_close">close Navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="opendrawer">open navigation drawer</string>
+    <string name="closedrawer">close navigation drawer</string>
+
 </resources>
